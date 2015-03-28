@@ -1,0 +1,109 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.mittal.logintest.DisplayStoriesActivity" >
+    
+    <com.sothree.slidinguppanel.SlidingUpPanelLayout
+        xmlns:sothree="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/filterSliding_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        sothree:umanoDragView="@+id/dragView"
+        sothree:umanoPanelHeight="42dp"
+        sothree:umanoParalaxOffset="100dp"
+        sothree:umanoShadowHeight="4dp"
+         >
+
+    <ListView
+        android:id="@+id/storiesView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true" 
+        android:background="#EBB16A">
+    </ListView>
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center|top"
+            android:background="#F9E7D1" >
+            
+       <TextView
+        android:id="@+id/tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="Filter Results"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+       <TextView
+           android:id="@+id/textView1"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_below="@+id/tv"
+           android:layout_centerHorizontal="true"
+           android:layout_marginTop="26dp"
+           android:text="Date Filter"
+           android:textStyle="bold" />
+<EditText
+        android:id="@+id/yearEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="Enter year"
+        android:inputType="number"
+         >
+
+    </EditText>
+
+    <RadioGroup
+        android:id="@+id/dateGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/yearEditText"
+        android:layout_centerHorizontal="true" >
+
+        <RadioButton
+            android:id="@+id/beforeRadio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Stories before entered year" />
+
+        <RadioButton
+            android:id="@+id/afterRadio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Stories after entered year" />
+
+        <RadioButton
+            android:id="@+id/exactRadio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Stories for entered year" />
+                <requestFocus />
+        
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/filterButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dateGroup"
+        android:layout_centerHorizontal="true"
+        android:text="Filter" />
+        
+        
+      </RelativeLayout>
+    
+    
+    </com.sothree.slidinguppanel.SlidingUpPanelLayout>
+
+</RelativeLayout>
